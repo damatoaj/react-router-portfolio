@@ -1,16 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Project extends Component {
-    render() {
-        console.log(this.props)
-        console.log(this.props.image)
+const Project = (props) => {
+
         return(
-            <div>
-                <h1>{this.props.title}</h1>
-                <img src={this.props.image}/>
+            <div className="project">
+                <h1>{props.title}</h1>
+                <img src={props.image} className="projImg"/>
+                <p>{props.synopsis}</p>
+                <p>{props.technologies}</p>
             </div>
         )
-    }
 }
 
 export default Project;

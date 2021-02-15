@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
 
@@ -14,8 +14,7 @@ import Blog from './Components/Pages/Blog';
 import About from './Components/Pages/About';
 import Projects from './Components/Pages/Projects';
 
-class App extends Component {
-  render() {
+const App = () => {
     return(
       <Router>
         <Header />
@@ -54,7 +53,6 @@ class App extends Component {
         <Footer />
       </Router>
     )
-  }
 }
 
 export default App;

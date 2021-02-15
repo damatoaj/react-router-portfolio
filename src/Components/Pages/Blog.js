@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-class Blog extends Component {
-    render() {
-        let blogList = this.props.blogPosts.map((blog) => {
+const Blog = (props) => {
+        let blogList = props.blogPosts.map((blog) => {
 
             console.log(blog.id)
             return(
@@ -24,7 +23,6 @@ class Blog extends Component {
                 </aricle>
             </div>
         )
-    }
 }
 
 export default Blog;

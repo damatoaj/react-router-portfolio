@@ -1,15 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Article extends Component {
-    render() {
-        console.log(this.props)
+const Article = (props) => {
+        console.log(props)
         return(
             <div>
-                <h1>{this.props.title}</h1>
-                <h3>{this.props.publication_date}</h3>
+                <h1>{props.title}</h1>
+                <h3>{props.publication_date}</h3>
             </div>
         )
-    }
 }
 
 export default Article;
