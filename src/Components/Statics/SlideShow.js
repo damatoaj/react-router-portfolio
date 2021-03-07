@@ -1,21 +1,33 @@
-const slideShow = [
+const SlideShow = [
     {
-    image: '/slideshow/arch.jpg'    
-},
-    {
-        image: '/slideshow/canoe.jpg'
+        id: 1,
+        image: '/slideshow/waterfall.jpg',
+        caption: 'Amnicon Falls State Park in northern Wisconsin'
     },
     {
-        image: '/slideshow/kayak.jpg'
+        id: 2,
+        image: '/slideshow/mtsi.jpg',
+        caption: 'My dog and I atop of Mt. Si'
     },
     {
-        image: '/slideshow/kayak2.jpg'
+        id: 3,
+        image: '/slideshow/pano1.jpg',
+        caption: 'Paddleboarding at Deception Pass State Park, Washington'
     },
     {
-        image: '/slideshow/reilly.jpg'
+        id: 4,
+        image: '/slideshow/nordicpeak.jpg',
+        caption: 'Taken from Norse Peak, WA'
     },
     {
-        image: '/slideshow/river/jpg'
+        id: 5,
+        image: '/slideshow/reilly.jpg',
+        caption: 'My special boy, Reilly'
+    },
+    {
+        id: 6,
+        image: '/slideshow/wiriver.jpg',
+        caption: 'Canoing trip on the Wisconsin River'
     }
 ]
 

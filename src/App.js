@@ -4,6 +4,9 @@ import './App.css';
 
 import BlogPosts from './Components/Statics/BlogPosts';
 import MyProjects from './Components/Statics/MyProjects';
+import SlideShow from './Components/Statics/SlideShow';
+import musicFiles from './Components/Statics/Music';
+
 
 import Header from './Components/Partials/Header';
 import Footer from './Components/Partials/Footer';
@@ -13,28 +16,43 @@ import Homepage from './Components/Pages/Homepage';
 import Blog from './Components/Pages/Blog';
 import About from './Components/Pages/About';
 import Projects from './Components/Pages/Projects';
+import Music from './Components/Pages/Music';
+
 
 const App = () => {
     return(
       <Router>
         <Header />
         <main>
-          <Route path='/' component={Homepage} />
-          <Route path='/About_Me' component={About} />
+          <Route 
+            path='/Home' 
+            render={() => <Homepage slides={SlideShow} />}
+          />
+          <Route 
+            path='/About_Me' 
+            render={()=> < About /> } 
+          />
           <Route 
             path='/Blog' 
             render={()=> <Blog blogPosts={BlogPosts}/>}
           />
           <Route
-            path='/Blog/:id'
+          ///article/:id so that the blog info doesn't carry over
+            path='/Article/:id'
             render={(props)=> {
-              const id = props.match.params.id;
-              console.log(id)
-              const articles = BlogPosts.find(({ id }) => id.toString() === props.match.params.id)
-              console.log(articles)
-              props = {...articles, ...id}
+              const id = props.match.params.id + 1;
+              // console.log(id)
+              const blogs={BlogPosts};
+              //for clarity make it singular
+              const article = BlogPosts.find(({ id }) => id.toString() === props.match.params.id)
+              // console.log(articles)
+              props = {...article, ...id, ...blogs}
               return <Article {...props}/>
             }}/>
+          <Route
+            path='/Music'
+            render={()=> <Music musicFiles={musicFiles}/>}
+          />
           <Route 
             path='/Projects' 
             render={()=> <Projects myProjects={MyProjects}/>} 
@@ -43,7 +61,7 @@ const App = () => {
             path='/Projects/:id'
             render={(props)=> {
               let id = props.match.params.id;
-              console.log(id)
+              // console.log(id)
               let project = MyProjects.find(({ id }) => id.toString() === props.match.params.id)
               props = {...project, ...id}
               return <Project {...props} />

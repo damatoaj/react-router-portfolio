@@ -4,24 +4,24 @@ import { Link } from 'react-router-dom';
 const Blog = (props) => {
         let blogList = props.blogPosts.map((blog) => {
 
-            console.log(blog.id)
+            console.log(blog)
             return(
-                <li key={blog.id}>
-                    <button>
-                        <Link to={`/Blog/${blog.id}`} className="blogList">{blog.title}</Link>
-                    </button>
+                <li key={blog.id} className="card">
+                    <div>
+                        <Link to={`/Article/${blog.id}`} className="blogList">{blog.title}</Link>
+                    </div>
                 </li>
             )
         })
         return(
-            <div>
-                <h1>This is the Blog</h1>
-                <aricle>
-                    <ul>
+            <section>
+                <h2>Writing has always been a passion of mine, hopefully you'll enjoy my musings on philosophy and recreation</h2>
+                <article>
+                    <div className="container">
                         {blogList}
-                    </ul>
-                </aricle>
-            </div>
+                    </div>
+                </article>
+            </section>
         )
 }
 

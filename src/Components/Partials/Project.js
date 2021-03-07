@@ -3,12 +3,12 @@ import React from 'react';
 const Project = (props) => {
 
         return(
-            <div className="project">
-                <h1>{props.title}</h1>
+            <fieldset className="project">
+                <legend>{props.title}</legend>
                 <img src={props.image} className="projImg"/>
                 <p>{props.synopsis}</p>
                 <p>{props.technologies}</p>
-            </div>
+            </fieldset>
         )
 }
 
