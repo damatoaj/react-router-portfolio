@@ -58,12 +58,12 @@ const App = () => {
             render={()=> <Projects myProjects={MyProjects}/>} 
           />
           <Route 
-            path='/Projects/:id'
+            path='/Project/:id'
             render={(props)=> {
-              let id = props.match.params.id;
-              // console.log(id)
-              let project = MyProjects.find(({ id }) => id.toString() === props.match.params.id)
-              props = {...project, ...id}
+              const id = props.match.params.id + 1
+              const projects = {MyProjects}
+              const project = MyProjects.find(({ id }) => id.toString() === props.match.params.id)
+              props = {...project, ...id, ...projects}
               return <Project {...props} />
             }
             }/>

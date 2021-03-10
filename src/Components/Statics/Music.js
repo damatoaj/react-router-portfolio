@@ -25,13 +25,13 @@ const musicFiles =[
     },
     {
         id: 5,
-        file: '/musicFiles/Wind_in_the_Waves.mp3' ,
+        file: '/musicFiles/Wind_in_the_Waves.mp3',
         title: 'Wind In The Waves',
         type:'audio/mpeg'
     },
     {
         id: 6,
-        file: '/musicFiles/Cut_me_up.mp3' ,
+        file: '/musicFiles/Cut_me_up.mp3',
         title: 'Cut Me Up',
         type:'audio/mpeg'
     },

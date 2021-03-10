@@ -1,24 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 const Projects = (props) => {
         let projectList = props.myProjects.map((project) => {
             return ( 
-           
-            <li key={project.id}>
-                <button>
-                    <Link to={`/Projects/${project.id}`} className="projectList">{project.title}</Link>
-                </button>
-            </li>
-          
+                <li key={project.id} className="card">
+                    <div>
+                        <Link to={`/Project/${project.id}`} className="blogList">{project.title}</Link>
+                    </div>
+                </li>
             )
         })
         return(
-            <div className="container">
-                <h1>These are my Projects</h1>
-                <ul>
+            <section>
+                <h2>These are my projects from my General Assembly software immersive bootcamp</h2>
+                <div className="container">
                     {projectList}
-                </ul>
-            </div>
+                </div>
+            </section>
         )
 }
 

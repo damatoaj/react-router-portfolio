@@ -2,7 +2,8 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import {FaArrowAltCircleRight, FaArrowAltCircleLeft} from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
-
+import Logo from '../../assests/Authur-logo-small.png';
+import BigLogo from '../../assests/Authur-logo-big.png';
 // import SlideShow from './Statics/SlideShow';
 
 
@@ -24,29 +25,29 @@ console.log(current)
         return(
             <section>
                 <picture>
-                    <source media="(min-width:651px)" srcset="/images/Author-logo-800x2000-#F0F0F0.png"/>
-                    <img src="/images/Author-logo-small.png" alt="logo" />
+                    <source media="(min-width:750px)"  srcSet={BigLogo}/>
+                    <img src={Logo} alt="logo"/>
                 </picture>
-                <span className='arrows'>
+                <div className='arrows'>
                     <IconContext.Provider value={{ className:'react-icons' }}>
                         <FaArrowAltCircleLeft onClick={prevSlide}/>
                         <FaArrowAltCircleRight onClick={nextSlide}/>
                     </IconContext.Provider>
-                </span>
-                <span>
-                            {props.slides.map((slide, index) => {
-                                return(
-                                    <div className={index === current ? 'slide_active' : 'slide'} key={index}>
-                                        {index === current && (
-                                        <> 
-                                            <figcaption>{slide.caption}</figcaption>
-                                            <img src={slide.image} alt="travel image" className="slides"/>
-                                        </>
-                                        )}
-                                    </div>
-                                )
-                            })}
-                </span>
+                </div>
+                <div>
+                    {props.slides.map((slide, index) => {
+                        return(
+                            <div className={index === current ? 'slide_active' : 'slide'} key={index}>
+                                {index === current && (
+                                <> 
+                                    <figcaption>{slide.caption}</figcaption>
+                                    <img src={slide.image} alt="travel image" className="slides"/>
+                                </>
+                                )}
+                            </div>
+                        )
+                    })}
+                </div>
             </section>
         )
 }
